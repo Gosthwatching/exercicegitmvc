@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page d'accueil</title>
+  <link rel="stylesheet" href="src/public/css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Mon Super Site</h1>
+    <nav>
+      <ul>
+        <li><a href="index.php?page=home">Accueil</a></li>
+        <li><a href="index.php?page=register">Créer un compte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <?php if(isset($_GET['message'])) : ?>
+      <p><?= $_GET['message'] ?></p>
+    <?php endif; ?>
+    <?php include $template.'.phtml'; ?>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mon Super Site. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
